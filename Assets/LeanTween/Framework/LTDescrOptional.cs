@@ -9,6 +9,7 @@ public class LTDescrOptional  {
 	public Transform toTrans { get; set; }
 	public Vector3 point { get; set; }
 	public Vector3 axis { get; set; }
+	public Vector3 rotCenter { get; set; }
     public float lastVal{ get; set; }
 	public Quaternion origRotation { get; set; }
 	public LTBezierPath path { get; set; }

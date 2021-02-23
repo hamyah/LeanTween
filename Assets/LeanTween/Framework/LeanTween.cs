@@ -1632,6 +1632,24 @@ public class LeanTween : MonoBehaviour {
     }
 
     /**
+    * <summary>Rotate a GameObject around a certain Axis (the best method to use when you want to rotate beyond 180 degrees) around a certain point of your choosing</summary>
+    * 
+    * @method LeanTween.rotateAround
+    * @param {GameObject} gameObject:GameObject Gameobject that you wish to rotate
+    * @param {Vector3} vec:Vector3 point in relation to which to rotate around ex: Vector3.zero
+    * @param {Vector3} vec:Vector3 axis in which to rotate around ex: Vector3.up
+    * @param {float} degrees:float the degrees in which to rotate
+    * @param {float} time:float time The time to complete the rotation in
+    * @return {LTDescr} LTDescr an object that distinguishes the tween
+    * @example
+    * <i>Example:</i><br />
+    * LeanTween.rotateAround ( gameObject, Vector3.left, 90f,  1f );
+    */
+    public static LTDescr rotateAroundPoint(GameObject gameObject, Vector3 point, Vector3 axis, float add, float time){
+        return pushNewTween( gameObject, new Vector3(add,0f,0f), time, options().setAxis(axis).setRotateAroundPoint(point) );
+    }
+
+    /**
     * <summary>Rotate a GameObject around a certain Axis in Local Space (the best method to use when you want to rotate beyond 180 degrees) </summary>
     * 
     * @method LeanTween.rotateAroundLocal
